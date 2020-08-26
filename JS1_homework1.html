@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework1</title>
+</head>
+
+<body>
+    <title>Homework 1</title>
+    <script defer>
+        const Tc = prompt("Введите температуру по Цельсию", 0); //температура по Цельсию  
+        if (isNaN(Number(Tc)) || Tc === null) {
+            alert("Число не введено!");
+        } else {
+            const Tf = (9 / 5) * Tc + 32; //где Tf – температура по Фаренгейту
+            alert(Tf);
+        }
+    </script>
+    <script defer>
+        const name = "Василий";
+        const admin = name;
+        confirm(`Админ системы - ${admin}`);
+    </script>
+    </script>
+    <script defer>
+        console.log(1000 + "108") //результат: 1000108, т.к. происходит конкатенация, если один из аргументов сложения - строка  
+    </script>
+</body>
+
+</html>
