@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 4</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		const calcus = {
+			a: 4,
+			b: 5,
+			sumLog: function (a, b) {
+				return console.log(this.a + this.b)
+			},
+		}
+		calcus.sumLog();
+	</script>
+
+	<script type="text/javascript">
+		const number = prompt("Введите число от 0 до 999", 0);
+
+
+		function numSplit(num) {
+			const arrNum = num.split("");
+			const ones = arrNum[arrNum.length - 1];
+			const tens = arrNum[arrNum.length - 2];
+			const hundreds = arrNum[arrNum.length - 3];
+
+			const objNum = {
+				ones: ones,
+				tens: tens,
+				hundreds: hundreds,
+			}
+			return objNum
+		}
+
+		function printResult(num, result) {
+			if (num <= 999 && num >= 0) {
+				console.log(result)
+			} else if (num > 999) {
+				console.log("Перебор")
+			} else if (num < 0) {
+				console.log("Отрицательное значение")
+			} else {
+				console.log("Введено не чило")
+			}
+		}
+		numSplit(number);
+		printResult(number, numSplit(number));	
+	</script>
+
+	<script type="text/javascript">
+		const basketTotalSumArr = [];
+		function Product(name, price, quantity) {
+			this.name = name;
+			this.price = price;
+			this.quantity = quantity;
+		}
+		const dress = new Product("dress", 1000, 1);
+		const shirt = new Product("shirt", 1500, 2);
+		const boots = new Product("boots", 2000, 1);
+
+		function purchaseProductSumArr(product) {
+			let productSum = product.price * product.quantity;
+			return basketTotalSumArr.push(productSum);
+		}
+
+		purchaseProductSumArr(dress);
+		purchaseProductSumArr(shirt);
+		purchaseProductSumArr(boots);
+
+		const basketTotalSum = (totalSum, currentSum) => totalSum + currentSum;
+		console.log(basketTotalSumArr.reduce(basketTotalSum, 0));	
+	</script>
+
+</body>
+
+</html>
